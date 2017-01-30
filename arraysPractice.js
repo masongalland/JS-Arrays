@@ -187,7 +187,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+  function maker() {
+    var arr = [];
+    for(var i=1; i<216; i++) {
+      arr.push(i);
+    }
+    return arr;
+  }
 
 
 
@@ -198,7 +204,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+ function addTen(numbers) {
+    var newArr = numbers.map(function(e){
+      return Number(e) + 10;
+    });
+    return newArr;
+  }
 
 
 
@@ -219,7 +230,13 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-  //Code Here
+  function longer(arr1, arr2) {
+    if(arr1.length > arr2.length) {
+      return arr1;
+    } else {
+      return arr2;
+    }
+  }
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -228,7 +245,20 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-  //Code Here
+    function both (arr1, arr2) {
+    var newArr = [];
+    console.log("arr1 is: " + arr1);
+    console.log("arr2 is: " + arr2);
+    
+      for(var i=0; i<arr1.length; i++) {
+        if(arr2.indexOf(arr1[i]) !== -1) {
+          newArr.push(arr1[i]);
+        }
+      }
+  
+  return newArr;
+
+  }
 
 
 
@@ -238,42 +268,46 @@ for(var i = 0; i < num2; i++){
 
 
 
-var devMountainEmployees = [];
+var devMountainEmployees = [
 
-var tyler = {
+{
     name: 'Tyler',
     position: 'Lead Instructor/Engineer',
     spiritAnimal: 'Honey Badger'
-};
+},
 
-var cahlan = {
+{
     name: 'Cahlan',
     position: 'CEO',
     spiritAnimal: 'butterfly'
-};
+},
 
-var ryan = {
+{
     name: 'Ryan',
     position: 'Marketing',
     spiritAnimal: 'fox'
-};
+},
 
-var colt = {
+{
     name: 'Colt',
     position: 'Everything really',
     spiritAnimal: 'Young Male Horse'
-};
+}]
 
 /*Above you're given an empty array with four objects. Fill the devMountainEmployees
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+  console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+  for(var i = 0; i<devMountainEmployees.length; i++) {
+    if(devMountainEmployees[i].name == 'Cahlan'){
+      devMountainEmployees.splice(i, 1);
+    }
+  };
 
 
 
@@ -315,7 +349,26 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+  var users = [
+    {
+    name: 'Mason Galland',
+    email: 'mason.galland@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+},
+{
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+},
+{
+    name: 'Aly Galland',
+    email: 'alygalland@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+}
+  ]
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -338,6 +391,10 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
+  for(var i = 0; i<users.length; i++) {
+    if(users[i].email == 'tylermcginnis33@gmail.com'){
+      users.splice(i, 1);
+    }
+  };
 
 //The activity we just did is very much how data works in 'the real world'.
