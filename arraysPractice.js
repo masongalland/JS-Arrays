@@ -104,9 +104,16 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
-
-  //Code Here
+function finder(arr) {
+  var random = getRandomArbitrary();
+  for (var i=0; i<arr.length; i++) {
+    if(arr[i] == random) {
+      return true;
+    }
+  }
+return false;   
+  
+}
 
 
 //Next problem
@@ -116,7 +123,16 @@ var getRandomArbitrary = function() {
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
+  function reverse(str) {
+    var arr = str.split("");
+    var reversedArr = [];
+
+    for(var i=arr.length -1; i>=0; i--) {
+      reversedArr.push(arr[i]);
+    }
+    return reversedArr.join("");
+
+  }
 
 
 //Next Problem
@@ -135,10 +151,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
+  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. 
+  When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+  
+  function removeItem(myGroceryList, item) {
+    var empty = [];
+    if(Array.isArray(myGroceryList)) {
+    var newGroceryList = myGroceryList.filter(function(e){
+      return e !== item;
+    });
+  return newGroceryList; 
+    }
+    return empty;   
+  }
+
+  function addItem(myGroceryList, item) {
+    var empty = [];
+    if(Array.isArray(myGroceryList)){
+      myGroceryList.push(item);
+      return myGroceryList;
+    }
+    return empty;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
